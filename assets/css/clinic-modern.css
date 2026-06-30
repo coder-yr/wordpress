@@ -1,0 +1,262 @@
+/* Modern Clinic Management UI Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --clinic-primary: #3b82f6;
+    --clinic-primary-hover: #2563eb;
+    --clinic-secondary: #10b981;
+    --clinic-danger: #ef4444;
+    --clinic-warning: #f59e0b;
+    --clinic-dark: #1e293b;
+    --clinic-text: #334155;
+    --clinic-text-light: #64748b;
+    --clinic-bg: #f8fafc;
+    --clinic-surface: rgba(255, 255, 255, 0.85);
+    
+    --clinic-radius-sm: 8px;
+    --clinic-radius-md: 16px;
+    --clinic-radius-lg: 24px;
+    
+    --clinic-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --clinic-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    --clinic-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.clinic-modern-wrapper {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    border-radius: var(--clinic-radius-lg);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0,0,0,0.05);
+    color: var(--clinic-text);
+    min-height: 60vh;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.clinic-modern-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 200px;
+    background-image: radial-gradient(at 0% 0%, hsla(213, 100%, 93%, 1) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsla(158, 100%, 93%, 1) 0px, transparent 50%);
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.clinic-modern-wrapper > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Glassmorphism Cards */
+.clinic-modern-wrapper .clinic-glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--clinic-radius-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clinic-modern-wrapper .clinic-glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Typography */
+.clinic-modern-wrapper h1, 
+.clinic-modern-wrapper h2, 
+.clinic-modern-wrapper h3, 
+.clinic-modern-wrapper h4 {
+    color: var(--clinic-dark);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.clinic-modern-wrapper .btn-clinic-primary {
+    background: var(--clinic-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.25rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+    transition: all 0.2s ease;
+}
+
+.clinic-modern-wrapper .btn-clinic-primary:hover {
+    background: var(--clinic-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+    color: white;
+}
+
+.clinic-modern-wrapper .btn-clinic-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Forms */
+.clinic-modern-wrapper .form-control,
+.clinic-modern-wrapper .form-select {
+    border-radius: var(--clinic-radius-sm);
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.clinic-modern-wrapper .form-control:focus,
+.clinic-modern-wrapper .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    border-color: var(--clinic-primary);
+    background: #ffffff;
+}
+
+.clinic-modern-wrapper label {
+    font-weight: 500;
+    color: var(--clinic-text);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Tabs / Segmented Control */
+.clinic-modern-wrapper .nav-pills {
+    background: #f1f5f9;
+    padding: 0.35rem;
+    border-radius: 12px;
+    display: inline-flex;
+    margin-bottom: 2rem !important;
+}
+
+.clinic-modern-wrapper .nav-pills .nav-item {
+    margin: 0;
+}
+
+.clinic-modern-wrapper .nav-pills .nav-link {
+    border-radius: 8px;
+    color: var(--clinic-text-light);
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    margin: 0;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.clinic-modern-wrapper .nav-pills .nav-link:hover {
+    color: var(--clinic-text);
+}
+
+.clinic-modern-wrapper .nav-pills .nav-link.active {
+    background: #ffffff;
+    color: var(--clinic-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.05);
+}
+
+/* Tables */
+.clinic-modern-wrapper .clinic-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+}
+
+.clinic-modern-wrapper .clinic-table th {
+    background: transparent;
+    color: var(--clinic-text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.clinic-modern-wrapper .clinic-table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.clinic-modern-wrapper .clinic-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.clinic-modern-wrapper .clinic-table tbody tr:hover {
+    background-color: rgba(248, 250, 252, 0.5);
+}
+
+/* Badges */
+.clinic-modern-wrapper .clinic-badge {
+    padding: 0.35em 0.75em;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+.clinic-modern-wrapper .clinic-badge-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.clinic-modern-wrapper .clinic-badge-warning {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+/* Dashboard Metric Cards */
+.clinic-modern-wrapper .metric-card {
+    border-radius: var(--clinic-radius-md);
+    padding: 1.5rem;
+    color: white;
+    box-shadow: var(--clinic-shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.clinic-modern-wrapper .metric-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.clinic-modern-wrapper .metric-primary {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.clinic-modern-wrapper .metric-success {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.clinic-modern-wrapper .metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.clinic-modern-wrapper .metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.9;
+}

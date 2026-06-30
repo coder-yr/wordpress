@@ -1,0 +1,19 @@
+{
+    "name": "digirise/clinic-management",
+    "description": "Production-ready Clinic Management System inside WordPress",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ClinicManagement\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Digirise",
+            "email": "contact@digirise.com"
+        }
+    ]
+}
